@@ -2,15 +2,19 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+
+
+@app.route("/")
 def head():
-    return render_template('index.html', number1 = 117000, number2 = 229000)
+    return render_template("index.html", number1=34, number2=45)
 
-@app.route('/sum')
+@app.route("/serdar")
 def number():
-    var1, var2 = 15210, 38960
-    return render_template('body.html', num1 = 117000, num2 = 229000, multiplication = var1+var2)
+    num1 = 23
+    num2 = 54
+    return render_template("body.html", value1=num1, value2=num2, sum=num1+num2)
 
 
-if __name__ == '__main__':
+
+if __name__== "__main__":
     app.run(debug=True)
